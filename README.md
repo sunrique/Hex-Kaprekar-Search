@@ -1,12 +1,23 @@
-# Hexadecimal Kaprekar & Collatz Analysis
-Research into base-16 number anomalies and iterative dynamical systems.
+# Quantitative Discovery: Hex-Kaprekar Sequences & Collatz Entropy
 
-## 1. Hexadecimal Kaprekar Numbers
-This repository contains the first exhaustive search for integers $n$ such that $n^2$ in hexadecimal can be split and summed to $n$. 
-**Status:** Pending OEIS Submission.
+**Principal Investigator:** Enrique Coello-montoya  
+**Date:** February 2026  
+**Tools:** SageMath (CoCalc), Lean 4 (Formal Verification)
 
-## 2. Collatz Parity Drift
-A statistical analysis of the 3n+1 conjecture. By calculating the geometric mean of multipliers, we identified an "Entropy Bias" of $\approx 0.68$, demonstrating why the sequence structurally decays toward 1.
+## Abstract
+This project documents the discovery of the Base-16 Kaprekar sequence and an empirical analysis of the Collatz Conjecture's structural "Parity Drift."
 
-## How to use
-Run `search.sage` in a SageMath environment (like CoCalc) to replicate the results.
+## I. Hexadecimal Kaprekar Sequence
+A Kaprekar number $n$ is defined by the property that $n^2$ in a given base can be split into two parts $L$ and $R$ such that $L + R = n$. This repository provides the exhaustive list of these numbers for Base-16 up to $10^6$.
+
+* **Logic:** `search.sage` (SageMath implementation)
+* **Formal Proof:** `verify.lean` (Lean 4 verification of boundary cases)
+* **Data:** `results.txt` (Confirmed integers: 0, 1, 6, 10, 15, 51, 85, 91, 120, 136, 171, 205, 255...)
+
+## II. Collatz Parity Drift
+By analyzing the geometric mean of multipliers in the $3n+1$ function, we identify a consistent "Entropy Bias" of $\approx 0.68$ (or $0.85$ for certain seed populations). This confirms that the sequence is structurally biased toward decay ($< 1.0$), providing a heuristic explanation for the conjecture's stability.
+
+* **Analysis:** `collatz.sage`
+
+---
+*License: MIT*
